@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js</title>
+    <script src="script.js"></script>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            font-size: 80px;
+        }
+        div>img{
+            width: 300px;
+            border-radius: 50%;
+        }
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+  
+    <script>
+        document.write("<h1> olá " + nome + " " + sobrenome + " seja bem vindo! </h1> <br>")
+        document.write("<p>" + idade20 + "</p> <br>")
+
+        if (idade >= 18 & idade <= 100) {
+            document.write("<div>" + '<img src="img/download.jpeg"' + "</div")
+        } else {
+            if (idade < 18) {
+                document.write("<div>" + ' <img src="img/download (2).jpeg">' + "</div")
+            } else {
+                document.write("<div>" + ' <img src="img/download (1).jpeg">' + "</div")
+            }
+        }
+        
+    </script>
+
+</body>
+
+</html>
