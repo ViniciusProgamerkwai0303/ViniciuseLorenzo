@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Js</title>
-    <script src="script.js"></script>
     <style>
         h1 {
             text-align: center;
@@ -16,33 +15,85 @@
             text-align: center;
             font-size: 80px;
         }
-        div>img{
+
+        div > img {
             width: 300px;
             border-radius: 50%;
         }
+
         div {
             text-align: center;
+        }
+
+        section {
+            margin-top: 50px;
         }
     </style>
 </head>
 
 <body>
-  
-    <script>
-        document.write("<h1> olá " + nome + " " + sobrenome + " seja bem vindo! </h1> <br>")
-        document.write("<p>" + idade20 + "</p> <br>")
 
-        if (idade >= 18 & idade <= 100) {
-            document.write("<div>" + '<img src="img/download.jpeg"' + "</div")
+    <script>
+        // Coleta de informações do usuário
+        var nome = prompt("Qual seu nome?");
+        var sobrenome = prompt("Qual seu sobrenome?");
+        var idade = parseInt(prompt("Qual sua idade?")); // Converte para número inteiro
+        var idade20;
+
+        // Mensagens de boas-vindas
+        document.write("<h1>Olá " + nome + " " + sobrenome + ", seja bem-vindo!</h1><br>");
+        
+        if (idade >= 18 && idade <= 100) {
+            idade20 = "Mães solteiras a 5km de você";
+            document.write("<div><img src='img/download.jpeg'></div>");
+        } else if (idade < 18) {
+            idade20 = "Criança, morra!";
+            document.write("<div><img src='img/download (2).jpeg'></div>");
         } else {
-            if (idade < 18) {
-                document.write("<div>" + ' <img src="img/download (2).jpeg">' + "</div")
+            idade20 = "Ancião do caralho!";
+            document.write("<div><img src='img/download (1).jpeg'></div>");
+        }
+
+        document.write("<p>" + idade20 + "</p><br>");
+
+        // Função para calcular a equação
+        function equacao() {
+            var a = parseFloat(prompt("Digite o coeficiente a"));
+            var b = parseFloat(prompt("Digite o coeficiente b"));
+            var c = parseFloat(prompt("Digite o coeficiente c"));
+            
+            // Verifica se a, b e c são números válidos
+            if (!isNaN(a) && !isNaN(b) && !isNaN(c)) {
+                if(b<0 && c>0){
+                    document.getElementById("equation").innerHTML = "<h1>A equação é " + a + "x² " + b + "x + " + c + "</h1>";
+                }else{
+                    if(c<0 && b>0){
+                        document.getElementById("equation").innerHTML = "<h1>A equação é " + a + "x² + " + b + "x " + c + "</h1>";
+                    }else{
+                        if(b<0 && c<0){
+                            document.getElementById("equation").innerHTML = "<h1>A equação é " + a + "x² " + b + "x " + c + "</h1>";
+                        }else{
+                            if(b>0 && c>0){
+                                document.getElementById("equation").innerHTML = "<h1>A equação é " + a + "x² + " + b + "x + " + c + "</h1>";
+                            } <button onclick="calculo()"></button>
+                        }
+                    }
+                }
             } else {
-                document.write("<div>" + ' <img src="img/download (1).jpeg">' + "</div")
+                document.getElementById("equation").innerHTML = "<h1>Valores inválidos para a equação.</h1>";
             }
         }
-        
     </script>
+
+    <section id="equation"></section>
+    
+    <script>
+        // Chama a função após a definição de variáveis
+        equacao();
+    </script>
+
+    
+
 
 </body>
 
